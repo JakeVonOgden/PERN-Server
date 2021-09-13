@@ -1,8 +1,10 @@
 const Express = require("express");
 const app = Express();
 const dbConnection = require("./db");
+const controllers = require("./controllers");
 
-
+app.use("/merchandise", controllers.merchandiseController);
+app.use("user", controllers.userController);
 
 dbConnection.authenticate()
     .then(() => dbConnection.sync())
