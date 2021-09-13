@@ -32,11 +32,6 @@ const Merchandise = db.define("merchandise", {
         allowNull: false
     },
 
-    Tags: {
-        type: DataTypes.STRING,
-        allowNull: true
-    },
-
     Favorited: {
         type: DataTypes.BOOLEAN,
         allowNull: true

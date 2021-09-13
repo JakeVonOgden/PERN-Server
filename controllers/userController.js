@@ -16,7 +16,7 @@ router.post("/register", body("email").isEmail(), (req, res) => {
     
     if (!errors.isEmpty()) {
         return res.status(400).json({ 
-            message: "must be a valid email -> [EXAMPLE]: anything@anything.anything",
+            message: "must be a valid email format --> [EXAMPLE]: anything@anything.anything",
             errors: errors.array() 
         });
     };
