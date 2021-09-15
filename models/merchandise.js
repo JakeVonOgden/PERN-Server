@@ -2,40 +2,40 @@ const { DataTypes } = require("sequelize");
 const db = require("../db");
 
 const Merchandise = db.define("merchandise", {
-    Category: {
+    category: {
         type: DataTypes.STRING,
         allowNull: false
     },
 
-    Name: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false
     },
 
-    Owner: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-
-    Image: {
+    image: {
         type: DataTypes.STRING,
         allowNull: true
     },
 
-    Description: {
+    description: {
         type: DataTypes.STRING,
         allowNull: false
     },
 
-    Price: {
+    price: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
 
-    Favorited: {
-        type: DataTypes.BOOLEAN,
-        allowNull: true
+    owner: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+ },
+    {
+        freezeTableName: true,
+        tableName: "Merchandises"
     }
-});
+);
 
 module.exports = Merchandise;
