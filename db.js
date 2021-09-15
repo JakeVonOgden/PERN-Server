@@ -1,4 +1,5 @@
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize("postgres://postgres:Rocket39@localhost:5432/PERN-Project-database")
+const {Sequelize} = require("sequelize")
 
-module.exports = sequelize;
+const db = new Sequelize(process.env.DB_CONNECTION_STRING);
+
+module.exports = db;
