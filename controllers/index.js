@@ -3,4 +3,3 @@ module.exports = {
     merchandiseController: require('./merchandiseController'),
     shopController: require('./shopController')
 }
-
