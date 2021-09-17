@@ -41,7 +41,7 @@ router.post("/register", body("email").isEmail(), (req, res) => {
         );
 
         res.status(201).json({
-            message: "Registration Succesful!",
+            message: "Registration Successful!",
             user: {
                 firstName: firstName,
                 lastName: lastName,
