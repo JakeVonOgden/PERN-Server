@@ -1,4 +1,13 @@
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize("postgres://postgres:Rocket39@localhost:5432/PERN-Project-database")
+const {Sequelize} = require("sequelize")
 
-module.exports = sequelize;
+const db = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    ssl: process.env.ENVIRONMENT === 'production',
+    dialectOptions: {
+        ssl: {
+            rejectUnauthorized: false
+        }
+    }
+});
+
+module.exports = db;
